@@ -22,7 +22,21 @@ try {
     if($scriptSql === false){
       throw new Exception('No se pudo leer el archivo' . $file);
     }
+    
+    if(!$conexion->multi_query($scriptSql)){
+      throw new Exception('Error al ejecutar el script SQL del archivo '. $file);
+    }
+    
+    do{
+      if($resultado = $conexion->store_result()){
+        $resultado->free();
+      }
+    }while($conexion->more_results() && $conexion->next_result());
+
+    echo 'Archivo ' . $file . ' ejecutado con éxito';
   }
+
+  echo 'Todos los archivos fuero ejecutados con éxito';
 
 } catch (Throwable $th) {
   error_log($th->getMessage());
