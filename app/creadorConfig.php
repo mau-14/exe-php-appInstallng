@@ -24,7 +24,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       $output = shell_exec('php ejecutable.php');
       if($output !== null){
         echo 'Archivo ejecutado correctamente';
+
       }
+
+
     }
   }catch(Throwable $th){
     error_log($th->getMessage());
