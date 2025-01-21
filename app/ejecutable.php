@@ -4,7 +4,7 @@ require_once './config/configDb.php';
 
 try {
 
-  $conexion = new mysqli(SERVIDOR,USUARIO,PASSWORD,BBDD);
+  $conexion = new mysqli(SERVIDOR,USUARIO,PASSWORD);
   if($conexion->connect_error){
     throw new Exception('No se pudo conectar con la base de datos');
   }
@@ -13,7 +13,7 @@ try {
   $sqlFiles = glob($sqlDirectory . '*.sql');
 
   if(empty($sqlFiles)){
-    throw new Exception('No se encontró ningún archivo .sql');
+    throw new Exception('No se encontro ningun archivo .sql');
   }
 
   foreach ($sqlFiles as $file) {
