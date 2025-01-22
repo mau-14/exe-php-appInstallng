@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registro</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <h3>Archivo ejecutado correctamente</h3>
-    <form action="./modelo/registro.php" method="Post">
-      <label>Registro de usuario administrador</label>
-      <br/>
-      <label>Nombre de usuario: </label>
-      <br/>
-      <input type="text" name='usuario' required>
-      <br/>
-      <label>Introduzca contraseña: </label>
-      <br/>
-      <input type="password" name='password' required>
-      <br/>
-      <label>Repita la contraseña: </label>
-      <br/>
-      <input type="password" name='password' required>
-      <br/>
-      <button type="submit">Registrar</button>
-    </form>
+    <div class="map-container" id="map-container">
+      <h1>Registro de Usuario Administrador</h1>
+      <form action="./modelo/registro.php" method="Post">
+        <br/>
+        <label>Nombre de usuario: </label>
+        <br/>
+        <input type="text" name='usuario' required>
+        <br/>
+        <label>Introduzca contraseña: </label>
+        <br/>
+        <input type="password" name='password' required>
+        <br/>
+        <label>Repita la contraseña: </label>
+        <br/>
+        <input type="password" name='password' required>
+        <br/>
+        <input type="submit" value="Registrar">
+      </form>
+    </div>
 
-    <script></script>
   </body>
 </html>
