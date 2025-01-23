@@ -8,6 +8,7 @@ try {
   if($conexion->connect_error){
     throw new Exception('No se pudo conectar con la base de datos');
   }
+  $conexion->set_charset('utf8');
 
   $sqlDirectory = './sql/';
   $sqlFiles = glob($sqlDirectory . '*.sql');
@@ -33,10 +34,8 @@ try {
       }
     }while($conexion->more_results() && $conexion->next_result());
 
-    echo 'Archivo ' . $file . ' ejecutado con éxito';
   }
 
-  echo 'Todos los archivos fuero ejecutados con éxito';
 
 } catch (Throwable $th) {
   error_log($th->getMessage());
